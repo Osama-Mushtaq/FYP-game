@@ -4,6 +4,14 @@ using UnityEngine.SceneManagement;
 public class MediumDifficultyClickableObject : MonoBehaviour
 {
     public Vector3 spawnRange = new Vector3(2, 4, 5);
+
+    void Start()
+    {
+        if (SavedObjectPos.getcond() == true)
+        {
+            transform.position = SavedObjectPos.getObjPos();
+        }
+    }
     void OnMouseDown()
     {
         Vector3 size = transform.lossyScale;
