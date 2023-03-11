@@ -14,16 +14,19 @@ public class MainMenuScript : MonoBehaviour
         if (t1.isOn)
         {
             Score.hitcounter = 0;
+            WhichDifficulty.setDiff(true, false, false);
             SceneManager.LoadScene("Scenes/EasyScene");
         }
         else if (t2.isOn)
         {
             Score.hitcounter = 0;
+            WhichDifficulty.setDiff(false, true, false);
             SceneManager.LoadScene("Scenes/MediumScene");
         }
         else if (t3.isOn)
         {
             Score.hitcounter = 0;
+            WhichDifficulty.setDiff(false, false, true);
             SceneManager.LoadScene("Scenes/HardScene");
         }
     }

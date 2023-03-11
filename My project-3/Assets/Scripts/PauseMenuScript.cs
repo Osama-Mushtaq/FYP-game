@@ -11,15 +11,15 @@ public class PauseMenuScript : MonoBehaviour
     public Toggle t3;
     public void Continue()
     {
-        if (t1.isOn)
+        if (WhichDifficulty.isEasy == true)
         {
             SceneManager.LoadScene("Scenes/EasyScene");
         }
-        else if (t2.isOn)
+        else if (WhichDifficulty.isMed == true)
         {
             SceneManager.LoadScene("Scenes/MediumScene");
         }
-        else if (t3.isOn)
+        else if (WhichDifficulty.isHard == true)
         {
             SceneManager.LoadScene("Scenes/HardScene");
         }
