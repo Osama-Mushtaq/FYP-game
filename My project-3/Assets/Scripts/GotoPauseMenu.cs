@@ -11,7 +11,7 @@ public class GotoPauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             SavedObjectPos.setObjPos(transform.position);
-            SavedObjectPos.setcond(true);
+            SavedObjectPos.setcond(true);//*checking a condition true which marks that the game was paused
             SceneManager.LoadScene("Scenes/PauseMenu");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
