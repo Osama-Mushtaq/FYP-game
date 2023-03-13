@@ -20,7 +20,7 @@ public class ObjRaycasting : MonoBehaviour
             if (renderer != null)
             {
                 // change the color of the object hit to red
-                renderer.material.color = Color.blue;
+                //renderer.material.color = Color.blue;
             }
         }
     }
