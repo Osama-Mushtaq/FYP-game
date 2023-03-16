@@ -16,33 +16,17 @@ public class EasyDifficultyClickableObject : MonoBehaviour
         }
     }
 
-    void Update()
+    void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 size = transform.lossyScale;
-            Vector3 pos = transform.position;
-            Vector3 newPosition = transform.position;
-            // newPosition.x = Random.Range(-spawnRange.x, spawnRange.x);
-            // newPosition.y = Random.Range(size.y, spawnRange.y);
-            newPosition.x = pos.x;
-            newPosition.y = pos.y;
-            newPosition.z = Random.Range(spawnRange.z, (float)2 * spawnRange.z);
-            transform.position = newPosition;
-        }
+        Vector3 size = transform.lossyScale;
+        Vector3 pos = transform.position;
+        Vector3 newPosition = transform.position;
+        // newPosition.x = Random.Range(-spawnRange.x, spawnRange.x);
+        // newPosition.y = Random.Range(size.y, spawnRange.y);
+        newPosition.x = pos.x;
+        newPosition.y = pos.y;
+        newPosition.z = Random.Range(spawnRange.z, (float)2 * spawnRange.z);
+        transform.position = newPosition;
+
     }
-    // void OnMouseDown()
-    // {
-
-    //     Vector3 size = transform.lossyScale;
-    //     Vector3 pos = transform.position;
-    //     Vector3 newPosition = transform.position;
-    //     // newPosition.x = Random.Range(-spawnRange.x, spawnRange.x);
-    //     // newPosition.y = Random.Range(size.y, spawnRange.y);
-    //     newPosition.x = pos.x;
-    //     newPosition.y = pos.y;
-    //     newPosition.z = Random.Range(spawnRange.z, (float)2 * spawnRange.z);
-    //     transform.position = newPosition;
-
-    // }
 }
