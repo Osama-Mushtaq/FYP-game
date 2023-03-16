@@ -29,4 +29,26 @@ public class EasyDifficultyClickableObject : MonoBehaviour
         transform.position = newPosition;
 
     }
+    //*using update
+    // void Update()
+    // {
+    //     RaycastHit hit;
+    //     if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.forward, out hit, 100))
+    //     {
+    //         Renderer renderer = hit.collider.GetComponent<Renderer>();
+    //         if (renderer.name == "Sphere")
+    //         {
+    //             Vector3 size = transform.lossyScale;
+    //             Vector3 pos = transform.position;
+    //             Vector3 newPosition = transform.position;
+    //             // newPosition.x = Random.Range(-spawnRange.x, spawnRange.x);
+    //             // newPosition.y = Random.Range(size.y, spawnRange.y);
+    //             newPosition.x = pos.x;
+    //             newPosition.y = pos.y;
+    //             newPosition.z = Random.Range(spawnRange.z, (float)2 * spawnRange.z);
+    //             transform.position = newPosition;
+    //         }
+    //     }
+    // }
+
 }
