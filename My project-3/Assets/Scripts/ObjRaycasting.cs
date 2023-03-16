@@ -1,3 +1,69 @@
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+// using UnityEngine.UI;
+
+// public class ObjRaycasting : MonoBehaviour
+// {
+//     //!declarations for changing crosshair color
+//     public Canvas crshr;
+//     private Color32 color = new Color(0.5f, 1f, 0.5f, 1f);
+//     //! declarations end for changing crosshair color
+//     public float waitTime = 4f;
+
+//     private bool isWaiting = false;
+//     // Start is called before the first frame update
+//     void Start()
+//     {
+
+//     }
+
+//     // Update is called once per frame
+//     void Update()
+//     {
+//         RaycastHit hit;
+//         if (Physics.Raycast(transform.position, transform.forward, out hit, 100))
+//         {
+//             Renderer renderer = hit.collider.GetComponent<Renderer>();
+//             if (renderer.name == "Sphere")
+//             {
+//                 StartCoroutine(WaitAndChangeColor());
+//             }
+//         }
+//     }
+//     IEnumerator WaitAndChangeColor()
+//     {
+//         // Check if already waiting
+//         if (isWaiting)
+//         {
+//             yield break;
+//         }
+
+//         // Set waiting flag
+//         isWaiting = true;
+
+//         // Wait for the specified time
+//         yield return new WaitForSeconds(waitTime);
+
+//         // Change the color of the crosshair
+//         //!Code for changing crosshair color
+//         Transform objectTransform = crshr.transform.Find("my_crosshair");
+//         Graphic objectGraphic = objectTransform.GetComponentInChildren<Graphic>();
+//         objectGraphic.color = color;
+
+//         Image[] objectImages = objectTransform.GetComponentsInChildren<Image>();
+//         foreach (Image image in objectImages)
+//         {
+//             image.color = color;
+//         }
+//         //!code end dor changing crosshair color
+
+//         // Reset waiting flag
+//         isWaiting = false;
+//     }
+// }
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,60 +71,94 @@ using UnityEngine.UI;
 
 public class ObjRaycasting : MonoBehaviour
 {
-    //!declarations for changing crosshair color
     public Canvas crshr;
-    private Color32 color = new Color(0.5f, 1f, 0.5f, 1f);
-    //! declarations end for changing crosshair color
+    private Color32 originalColor = new Color32(255, 255, 255, 255);
+    private Color32 targetColor = new Color32(127, 255, 127, 255);
     public float waitTime = 4f;
 
     private bool isWaiting = false;
-    // Start is called before the first frame update
-    void Start()
-    {
+    private bool isTargetObject = false;
+    private Coroutine colorCoroutine;
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 100) && Input.GetMouseButtonDown(0))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 100))
         {
             Renderer renderer = hit.collider.GetComponent<Renderer>();
             if (renderer.name == "Sphere")
             {
-                StartCoroutine(WaitAndChangeColor());
+                // Set flag to indicate the target object is in focus
+                isTargetObject = true;
+                // If not waiting, start coroutine to change color after wait time
+                if (!isWaiting)
+                {
+                    colorCoroutine = StartCoroutine(WaitAndChangeColor());
+                }
+            }
+            else
+            {
+                // Reset flags and stop the color change coroutine if the target object is not in focus
+                isTargetObject = false;
+                isWaiting = false;
+                if (colorCoroutine != null)
+                {
+                    StopCoroutine(colorCoroutine);
+                }
+                ResetColor();
             }
         }
+        else
+        {
+            // Reset flags and stop the color change coroutine if the target object is not in focus
+            isTargetObject = false;
+            isWaiting = false;
+            if (colorCoroutine != null)
+            {
+                StopCoroutine(colorCoroutine);
+            }
+            ResetColor();
+        }
     }
+
     IEnumerator WaitAndChangeColor()
     {
-        // Check if already waiting
-        if (isWaiting)
-        {
-            yield break;
-        }
-
         // Set waiting flag
         isWaiting = true;
 
         // Wait for the specified time
         yield return new WaitForSeconds(waitTime);
 
-        // Change the color of the crosshair
-        //!Code for changing crosshair color
+        // Check if still targeting the object before changing color
+        if (isTargetObject)
+        {
+            // Change the color of the crosshair
+            Transform objectTransform = crshr.transform.Find("my_crosshair");
+            Graphic objectGraphic = objectTransform.GetComponentInChildren<Graphic>();
+            objectGraphic.color = targetColor;
+
+            Image[] objectImages = objectTransform.GetComponentsInChildren<Image>();
+            foreach (Image image in objectImages)
+            {
+                image.color = targetColor;
+            }
+        }
+
+        // Reset waiting flag
+        isWaiting = false;
+    }
+
+    void ResetColor()
+    {
+        // Reset the color of the crosshair to the original color
         Transform objectTransform = crshr.transform.Find("my_crosshair");
         Graphic objectGraphic = objectTransform.GetComponentInChildren<Graphic>();
-        objectGraphic.color = color;
+        objectGraphic.color = originalColor;
 
         Image[] objectImages = objectTransform.GetComponentsInChildren<Image>();
         foreach (Image image in objectImages)
         {
-            image.color = color;
+            image.color = originalColor;
         }
-        //!code end dor changing crosshair color
-
-        // Reset waiting flag
-        isWaiting = false;
     }
 }
