@@ -19,8 +19,6 @@ public class ObjRaycasting : MonoBehaviour
             Renderer renderer = hit.collider.GetComponent<Renderer>();
             if (renderer != null)
             {
-                // change the color of the object hit to red
-                //renderer.material.color = Color.blue;
             }
         }
     }
