@@ -42,17 +42,6 @@ public class ObjRaycasting : MonoBehaviour
                 ResetColor();
             }
         }
-        else
-        {
-            // Reset flags and stop the color change coroutine if the target object is not in focus
-            isTargetObject = false;
-            isWaiting = false;
-            if (colorCoroutine != null)
-            {
-                StopCoroutine(colorCoroutine);
-            }
-            ResetColor();
-        }
     }
 
     IEnumerator WaitAndChangeColor()
