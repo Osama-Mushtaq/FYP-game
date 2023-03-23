@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class ObjRaycasting : MonoBehaviour
 {
     public Canvas crshr;
+    public GameObject objbody;
     private Color32 originalColor = new Color32(255, 255, 255, 255);
     private Color32 targetColor = new Color32(127, 255, 127, 255);
     public float waitTime = 4f;
+    private Vector3 spawnRange = new Vector3(2, 4, 5);
 
     private bool isWaiting = false;
     private bool isTargetObject = false;
@@ -43,6 +45,10 @@ public class ObjRaycasting : MonoBehaviour
     IEnumerator WaitAndChangeColor()
     {
         isWaiting = true;
+        if (Input.GetMouseButtonDown(0) && isWaiting)
+        {
+            //do nothing
+        }
         yield return new WaitForSeconds(waitTime);
         if (isTargetObject)
         {
@@ -57,6 +63,17 @@ public class ObjRaycasting : MonoBehaviour
         }
         //TODO: can add the new code here of CLICKING
         isWaiting = false;
+
+        if (Input.GetMouseButtonDown(0) && !isWaiting)
+        {
+            Vector3 size = objbody.transform.lossyScale;
+            Vector3 pos = objbody.transform.position;
+            Vector3 newPosition = objbody.transform.position;
+            newPosition.x = pos.x;
+            newPosition.y = pos.y;
+            newPosition.z = Random.Range(spawnRange.z, (float)2 * spawnRange.z);
+            transform.position = newPosition;
+        }
     }
     void ResetColor()
     {
