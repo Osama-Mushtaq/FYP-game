@@ -22,9 +22,7 @@ public class ObjRaycasting : MonoBehaviour
             Renderer renderer = hit.collider.GetComponent<Renderer>();
             if (renderer.name == "Sphere")
             {
-                // Set flag to indicate the target object is in focus
                 isTargetObject = true;
-                // If not waiting, start coroutine to change color after wait time
                 if (!isWaiting)
                 {
                     colorCoroutine = StartCoroutine(WaitAndChangeColor());
@@ -32,7 +30,6 @@ public class ObjRaycasting : MonoBehaviour
             }
             else
             {
-                // Reset flags and stop the color change coroutine if the target object is not in focus
                 isTargetObject = false;
                 isWaiting = false;
                 if (colorCoroutine != null)
@@ -43,41 +40,29 @@ public class ObjRaycasting : MonoBehaviour
             }
         }
     }
-
     IEnumerator WaitAndChangeColor()
     {
-        // Set waiting flag
         isWaiting = true;
-
-        // Wait for the specified time
         yield return new WaitForSeconds(waitTime);
-
-        // Check if still targeting the object before changing color
         if (isTargetObject)
         {
-            // Change the color of the crosshair
             Transform objectTransform = crshr.transform.Find("my_crosshair");
             Graphic objectGraphic = objectTransform.GetComponentInChildren<Graphic>();
             objectGraphic.color = targetColor;
-
             Image[] objectImages = objectTransform.GetComponentsInChildren<Image>();
             foreach (Image image in objectImages)
             {
                 image.color = targetColor;
             }
         }
-
-        // Reset waiting flag
+        //TODO: can add the new code here of CLICKING
         isWaiting = false;
     }
-
     void ResetColor()
     {
-        // Reset the color of the crosshair to the original color
         Transform objectTransform = crshr.transform.Find("my_crosshair");
         Graphic objectGraphic = objectTransform.GetComponentInChildren<Graphic>();
         objectGraphic.color = originalColor;
-
         Image[] objectImages = objectTransform.GetComponentsInChildren<Image>();
         foreach (Image image in objectImages)
         {
