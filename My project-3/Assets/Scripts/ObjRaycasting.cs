@@ -58,7 +58,6 @@ public class ObjRaycasting : MonoBehaviour
                 image.color = targetColor;
             }
         }
-        //TODO: can add the new code here of CLICKING
         isWaiting = false;
         canHit = true;
     }

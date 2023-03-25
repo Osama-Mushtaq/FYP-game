@@ -6,8 +6,9 @@ using TMPro;
 
 public class EasyDifficultyClickableObject : MonoBehaviour
 {
+    public Canvas crshr;
     public Vector3 spawnRange = new Vector3(2, 4, 5);
-
+    private Color32 originalColor = new Color32(255, 255, 255, 255);
     void Start()
     {
         if (SavedObjectPos.getcond() == true)
@@ -29,6 +30,17 @@ public class EasyDifficultyClickableObject : MonoBehaviour
             newPosition.y = pos.y;
             newPosition.z = Random.Range(spawnRange.z, (float)2 * spawnRange.z);
             transform.position = newPosition;
+        }
+    }
+    void ResetColor()
+    {
+        Transform objectTransform = crshr.transform.Find("my_crosshair");
+        Graphic objectGraphic = objectTransform.GetComponentInChildren<Graphic>();
+        objectGraphic.color = originalColor;
+        Image[] objectImages = objectTransform.GetComponentsInChildren<Image>();
+        foreach (Image image in objectImages)
+        {
+            image.color = originalColor;
         }
     }
 }
