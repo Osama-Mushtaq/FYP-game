@@ -6,8 +6,8 @@ using TMPro;
 
 public class EasyDifficultyClickableObject : MonoBehaviour
 {
-    public Canvas crshr;
     public Vector3 spawnRange = new Vector3(2, 4, 5);
+    public Canvas crshr;
     private Color32 originalColor = new Color32(255, 255, 255, 255);
     void Start()
     {
@@ -24,8 +24,6 @@ public class EasyDifficultyClickableObject : MonoBehaviour
             Vector3 size = transform.lossyScale;
             Vector3 pos = transform.position;
             Vector3 newPosition = transform.position;
-            // newPosition.x = Random.Range(-spawnRange.x, spawnRange.x);
-            // newPosition.y = Random.Range(size.y, spawnRange.y);
             newPosition.x = pos.x;
             newPosition.y = pos.y;
             newPosition.z = Random.Range(spawnRange.z, (float)2 * spawnRange.z);
