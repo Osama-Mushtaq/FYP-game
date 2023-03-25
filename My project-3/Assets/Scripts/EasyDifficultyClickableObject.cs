@@ -30,9 +30,10 @@ public class EasyDifficultyClickableObject : MonoBehaviour
             newPosition.y = pos.y;
             newPosition.z = Random.Range(spawnRange.z, (float)2 * spawnRange.z);
             transform.position = newPosition;
+            ResetColor_2();
         }
     }
-    void ResetColor()
+    void ResetColor_2()
     {
         Transform objectTransform = crshr.transform.Find("my_crosshair");
         Graphic objectGraphic = objectTransform.GetComponentInChildren<Graphic>();

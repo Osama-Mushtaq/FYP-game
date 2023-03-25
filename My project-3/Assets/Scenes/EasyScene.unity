@@ -1298,6 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237953e7b5e3ac743973160596a82f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crshr: {fileID: 1933983038}
   spawnRange: {x: 2, y: 4, z: 5}
 --- !u!114 &1958387336
 MonoBehaviour:
