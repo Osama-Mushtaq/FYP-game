@@ -607,6 +607,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -709,6 +710,18 @@ MonoBehaviour:
   crshr: {fileID: 1933983038}
   objbody: {fileID: 1958387327}
   waitTime: 4
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1bcda7916c9f34d9f35ea62b2270cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &978523568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1185,6 @@ GameObject:
   - component: {fileID: 1958387329}
   - component: {fileID: 1958387328}
   - component: {fileID: 1958387334}
-  - component: {fileID: 1958387335}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1287,18 +1299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 792664489}
---- !u!114 &1958387335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958387327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df1bcda7916c9f34d9f35ea62b2270cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2036110185
 GameObject:
   m_ObjectHideFlags: 0
