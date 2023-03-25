@@ -13,7 +13,7 @@ public class ObjRaycasting : MonoBehaviour
 
     private bool isWaiting = false;
     private bool isTargetObject = false;
-    private bool canHit = false;
+    public static bool canHit = false;
     private Coroutine colorCoroutine;
 
     void Update()
@@ -34,6 +34,7 @@ public class ObjRaycasting : MonoBehaviour
             {
                 isTargetObject = false;
                 isWaiting = false;
+                canHit = false;
                 if (colorCoroutine != null)
                 {
                     StopCoroutine(WaitAndChangeColor());
