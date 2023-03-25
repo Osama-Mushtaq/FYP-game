@@ -6,7 +6,7 @@ using TMPro;
 
 public class EasyDifficultyClickableObject : MonoBehaviour
 {
-    public Vector3 spawnRange = new Vector3(2, 4, 5);
+    private Vector3 spawnRange = new Vector3(2, 4, 5);
     public Canvas crshr;
     private Color32 originalColor = new Color32(255, 255, 255, 255);
     void Start()
