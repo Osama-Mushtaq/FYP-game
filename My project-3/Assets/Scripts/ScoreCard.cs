@@ -17,11 +17,14 @@ public class ScoreCard : MonoBehaviour
 
     void OnMouseDown()
     {
-        Score.hitcounter += 1;
-        txt.text = "Score=" + Score.hitcounter + "/" + MaxHitScore.GetMaxHitValue();
-        if (Score.hitcounter == MaxHitScore.GetMaxHitValue())
+        if (ObjRaycasting.canHit == true)
         {
-            Score.hitcounter = 0;
+            Score.hitcounter += 1;
+            txt.text = "Score=" + Score.hitcounter + "/" + MaxHitScore.GetMaxHitValue();
+            if (Score.hitcounter == MaxHitScore.GetMaxHitValue())
+            {
+                Score.hitcounter = 0;
+            }
         }
     }
 
