@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MaxHitScore : MonoBehaviour
 {
-    public static int maxhitValue;
+    public static int maxhitValue = 3;
 
     public static void SetMaxHitrValue(int value)
     {
