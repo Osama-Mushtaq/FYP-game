@@ -19,29 +19,31 @@ public class ObjRaycasting : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        Physics.Raycast(transform.position, transform.forward, out hit);
+        if (hit.collider.gameObject.name == "Sphere")
         {
-
-            if (hit.collider.gameObject.name == "Sphere")
+            isTargetObject = true;
+            if (!isWaiting)
             {
-                isTargetObject = true;
-                if (!isWaiting)
-                {
-                    colorCoroutine = StartCoroutine(WaitAndChangeColor());
-                }
-            }
-            else
-            {
-                isTargetObject = false;
-                isWaiting = false;
-                canHit = false;
-                if (colorCoroutine != null)
-                {
-                    StopCoroutine(WaitAndChangeColor());
-                }
-                ResetColor();
+                colorCoroutine = StartCoroutine(WaitAndChangeColor());
             }
         }
+        else if (hit.collider == null || hit.collider.gameObject.name != "Sphere")
+        {
+            isTargetObject = false;
+            isWaiting = false;
+            canHit = false;
+            if (colorCoroutine != null)
+            {
+                StopCoroutine(WaitAndChangeColor());
+            }
+            ResetColor();
+        }
+        // if ()
+        // {
+
+
+        // }
     }
     IEnumerator WaitAndChangeColor()
     {
