@@ -19,7 +19,7 @@ public class ObjRaycasting : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Physics.Raycast(transform.position, transform.forward, out hit);
+        Physics.Raycast(transform.position, transform.forward, out hit, 50);
         if (hit.collider.gameObject.name == "Sphere")
         {
             isTargetObject = true;
