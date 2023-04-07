@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -706,7 +706,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1d313fcea916446918cf5f0b9d4744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crshr: {fileID: 1933983038}
+  hitName: Sphere
+  hitDistance: 50
+  waitTime: 2
+  crossHairParts:
+  - {fileID: 1826828715}
+  - {fileID: 1012860669}
+  - {fileID: 212171350}
+  - {fileID: 1631454346}
+  - {fileID: 2119656942}
+  originalColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  targetColor:
+    serializedVersion: 2
+    rgba: 4286578559
 --- !u!1 &978523568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 792664489}
+  _objRayCasting: {fileID: 963194230}
 --- !u!114 &1958387335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1298,8 +1313,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237953e7b5e3ac743973160596a82f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objRayCasting: {fileID: 963194230}
   crshr: {fileID: 1933983038}
-  spawnRange: {x: 2, y: 4, z: 5}
 --- !u!114 &1958387336
 MonoBehaviour:
   m_ObjectHideFlags: 0

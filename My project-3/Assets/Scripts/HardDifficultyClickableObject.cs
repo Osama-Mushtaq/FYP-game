@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HardDifficultyClickableObject : MonoBehaviour
 {
+    [SerializeField] private ObjRayCasting _objRayCasting;
     private Vector3 spawnRange = new Vector3(2, 6, 10);
     public Canvas crshr;
     private Color32 originalColor = new Color32(255, 255, 255, 255);
@@ -18,8 +19,9 @@ public class HardDifficultyClickableObject : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if (ObjRaycasting.canHit == true)
+        if (_objRayCasting.CanHit == true)
         {
+            _objRayCasting.Reset();
             Vector3 size = transform.lossyScale;
             Vector3 newPosition = transform.position;
             newPosition.x = Random.Range(-spawnRange.x, spawnRange.x);

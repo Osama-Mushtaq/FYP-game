@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ScoreCard : MonoBehaviour
 {
     public TextMeshProUGUI txt;
+    [SerializeField] private ObjRayCasting _objRayCasting;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class ScoreCard : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (ObjRaycasting.canHit == true)
+        if (_objRayCasting.CanHit == true)
         {
             Score.hitcounter += 1;
             txt.text = "Score=" + Score.hitcounter + "/" + MaxHitScore.GetMaxHitValue();

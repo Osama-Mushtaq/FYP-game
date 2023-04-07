@@ -6,6 +6,7 @@ using TMPro;
 
 public class EasyDifficultyClickableObject : MonoBehaviour
 {
+    [SerializeField] private ObjRayCasting _objRayCasting;
     private Vector3 spawnRange = new Vector3(2, 4, 5);
     public Canvas crshr;
     private Color32 originalColor = new Color32(255, 255, 255, 255);
@@ -19,8 +20,9 @@ public class EasyDifficultyClickableObject : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (ObjRaycasting.canHit == true)
+        if (_objRayCasting.CanHit == true)
         {
+            _objRayCasting.Reset();
             Vector3 size = transform.lossyScale;
             Vector3 pos = transform.position;
             Vector3 newPosition = transform.position;
