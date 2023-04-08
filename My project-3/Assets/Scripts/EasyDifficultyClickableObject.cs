@@ -33,6 +33,7 @@ public class EasyDifficultyClickableObject : MonoBehaviour
             ResetColor_2();
         }
     }
+
     void ResetColor_2()
     {
         Transform objectTransform = crshr.transform.Find("my_crosshair");
