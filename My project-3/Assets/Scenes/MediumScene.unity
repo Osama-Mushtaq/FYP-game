@@ -571,7 +571,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1d313fcea916446918cf5f0b9d4744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crshr: {fileID: 1933983038}
+  hitName: Sphere
+  hitDistance: 50
+  waitTime: 2
+  crossHairParts:
+  - {fileID: 1826828715}
+  - {fileID: 1012860669}
+  - {fileID: 212171350}
+  - {fileID: 1631454346}
+  - {fileID: 2119656942}
+  originalColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  targetColor:
+    serializedVersion: 2
+    rgba: 4286578559
 --- !u!1 &978523568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,6 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ad1249b0a1c314ab436dccc163555b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objRayCasting: {fileID: 963194230}
   crshr: {fileID: 1933983038}
 --- !u!114 &1958387334
 MonoBehaviour:
@@ -1299,6 +1314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 1513471541}
+  _objRayCasting: {fileID: 0}
 --- !u!114 &1958387335
 MonoBehaviour:
   m_ObjectHideFlags: 0

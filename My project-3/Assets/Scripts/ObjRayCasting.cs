@@ -94,7 +94,7 @@ public class ObjRayCasting : MonoBehaviour
     [SerializeField] private Image[] crossHairParts;
     [SerializeField] private Color32 originalColor = new Color32(255, 255, 255, 255);
     [SerializeField] private Color32 targetColor = new Color32(127, 255, 127, 255);
-    
+
     private enum State { Idle, Waiting, On }
     private State _currentState = State.Idle, _nextState = State.Idle;
     private float _waitedTime;
@@ -106,14 +106,14 @@ public class ObjRayCasting : MonoBehaviour
         crossHairParts.ToList().ForEach(x => x.color = originalColor);
         _currentState = State.Idle;
     }
-    
+
     private bool IsHitting()
     {
-        if (!Physics.Raycast(transform.position, transform.forward,
-                out var hit, hitDistance)) return false;
+        if (!Physics.Raycast(transform.position, transform.forward, out var hit, hitDistance))
+            return false;
         return hit.transform.name == hitName;
     }
-    
+
     private void Update()
     {
         switch (_currentState)
@@ -140,7 +140,7 @@ public class ObjRayCasting : MonoBehaviour
         if (_currentState == _nextState) return;
         _currentState = _nextState;
         print($"Switched to {_nextState}");
-        
+
         switch (_nextState)
         {
             case State.Idle:
@@ -157,5 +157,5 @@ public class ObjRayCasting : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
-    
+
 }
