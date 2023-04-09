@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 792664489}
-  _objRayCasting: {fileID: 963194230}
+  _objRayCasting: {fileID: 0}
 --- !u!114 &1958387335
 MonoBehaviour:
   m_ObjectHideFlags: 0

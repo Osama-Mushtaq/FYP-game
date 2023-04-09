@@ -574,7 +574,12 @@ MonoBehaviour:
   hitName: Sphere
   hitDistance: 50
   waitTime: 2
-  crossHairParts: []
+  crossHairParts:
+  - {fileID: 1826828715}
+  - {fileID: 1012860669}
+  - {fileID: 212171350}
+  - {fileID: 1631454346}
+  - {fileID: 2119656942}
   originalColor:
     serializedVersion: 2
     rgba: 4294967295
