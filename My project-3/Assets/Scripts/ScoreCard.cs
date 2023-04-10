@@ -18,7 +18,7 @@ public class ScoreCard : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (_objRayCasting.CanHit == true)
+        if (Score.cccc == true)
         {
             Score.hitcounter += 1;
             txt.text = "Score=" + Score.hitcounter + "/" + MaxHitScore.GetMaxHitValue();
@@ -26,6 +26,7 @@ public class ScoreCard : MonoBehaviour
             {
                 Score.hitcounter = 0;
             }
+            Score.cccc = false;
         }
     }
 
