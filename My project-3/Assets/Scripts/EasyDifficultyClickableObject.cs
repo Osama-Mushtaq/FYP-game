@@ -9,7 +9,7 @@ public class EasyDifficultyClickableObject : MonoBehaviour
     [SerializeField] private ObjRayCasting _objRayCasting;
     private Vector3 spawnRange = new Vector3(2, 4, 5);
     public Canvas crshr;
-    private Color32 originalColor = new Color32(255, 255, 255, 255);
+    //private Color32 originalColor = new Color32(255, 255, 255, 255);
     void Start()
     {
         if (SavedObjectPos.getcond() == true)
