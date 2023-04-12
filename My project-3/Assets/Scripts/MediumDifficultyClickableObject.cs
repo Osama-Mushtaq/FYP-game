@@ -17,9 +17,10 @@ public class MediumDifficultyClickableObject : MonoBehaviour
         }
     }
     void OnMouseDown()
-    { 
+    {
         if (_objRayCasting.CanHit == true)
         {
+            Score.cccc = true;
             _objRayCasting.Reset();
             Vector3 size = transform.lossyScale;
             Vector3 newPosition = transform.position;
