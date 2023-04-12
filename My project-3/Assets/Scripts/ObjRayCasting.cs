@@ -92,8 +92,8 @@ public class ObjRayCasting : MonoBehaviour
     [SerializeField] private float hitDistance = 50f;
     [SerializeField] private float waitTime = 2f;
     [SerializeField] private Image[] crossHairParts;
-    [SerializeField] private Color32 originalColor = new Color32(255, 0, 0, 255);
-    [SerializeField] private Color32 targetColor = new Color32(127, 255, 127, 255);
+    private Color32 originalColor = new Color32(255, 0, 0, 255);
+    private Color32 targetColor = new Color32(127, 255, 127, 255);
 
     private enum State { Idle, Waiting, On }
     private State _currentState = State.Idle, _nextState = State.Idle;
