@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour
 {
-    // public Toggle t1;
-    // public Toggle t2;
-    // public Toggle t3;
     public void Continue()
     {
         if (WhichDifficulty.isEasy == true)
