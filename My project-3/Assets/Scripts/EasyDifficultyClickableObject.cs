@@ -34,16 +34,4 @@ public class EasyDifficultyClickableObject : MonoBehaviour
             //ResetColor_2();
         }
     }
-
-    // void ResetColor_2()
-    // {
-    //     Transform objectTransform = crshr.transform.Find("my_crosshair");
-    //     Graphic objectGraphic = objectTransform.GetComponentInChildren<Graphic>();
-    //     objectGraphic.color = originalColor;
-    //     Image[] objectImages = objectTransform.GetComponentsInChildren<Image>();
-    //     foreach (Image image in objectImages)
-    //     {
-    //         image.color = originalColor;
-    //     }
-    // }
 }
