@@ -715,12 +715,6 @@ MonoBehaviour:
   - {fileID: 212171350}
   - {fileID: 1631454346}
   - {fileID: 2119656942}
-  originalColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  targetColor:
-    serializedVersion: 2
-    rgba: 4286578559
 --- !u!1 &978523568
 GameObject:
   m_ObjectHideFlags: 0
