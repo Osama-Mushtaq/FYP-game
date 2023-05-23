@@ -3,8 +3,8 @@ using System.IO.Ports;
 
 public class ESP : MonoBehaviour
 {
-    public string portName = "COM3"; // Replace with your NodeMCU ESP8266's serial port name
-    public int baudRate = 9600;
+    public string portName = "COM5"; // Replace with your NodeMCU ESP8266's serial port name
+    public int baudRate = 115200;
 
     private SerialPort serialPort;
 
@@ -31,11 +31,11 @@ public class ESP : MonoBehaviour
         }
     }
 
-    void OnDestroy()
-    {
-        if (serialPort != null && serialPort.IsOpen)
-        {
-            serialPort.Close(); // Close the serial connection when the script is destroyed
-        }
-    }
+    // void OnDestroy()
+    // {
+    //     if (serialPort != null && serialPort.IsOpen)
+    //     {
+    //         serialPort.Close(); // Close the serial connection when the script is destroyed
+    //     }
+    // }
 }
