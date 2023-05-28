@@ -18,6 +18,7 @@ public class Looking : MonoBehaviour
         float my_X = Input.GetAxis("Mouse X") * sens * Time.deltaTime;
         float my_Y = Input.GetAxis("Mouse Y") * sens * Time.deltaTime;
 
+
         rotateboutX -= my_Y;
         rotateboutX = Mathf.Clamp(rotateboutX, -90f, 90f);
         transform.localRotation = Quaternion.Euler(rotateboutX, 0f, 0f);
