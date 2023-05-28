@@ -20,6 +20,7 @@ public class Looking : MonoBehaviour
         float my_X = -ESP.yy * sens * Time.deltaTime;
         float my_Y = (-10 + ESP.xx) * sens * Time.deltaTime;
 
+
         rotateboutX -= my_Y;
         rotateboutX = Mathf.Clamp(rotateboutX, -90f, 90f);
         transform.localRotation = Quaternion.Euler(rotateboutX, 0f, 0f);
