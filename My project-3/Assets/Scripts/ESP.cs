@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.IO.Ports;
 using System.Collections.Generic;
+using System.Reflection;
+using System;
 
 public class ESP : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class ESP : MonoBehaviour
     private List<float> myArray;
     public static float xx;
     public static float yy;
+    public static float zz;
 
     private SerialPort serialPort;
 
@@ -32,6 +35,7 @@ public class ESP : MonoBehaviour
                 var zRotation = serialPort.ReadLine(); // Read a line of data from the serial connection
                 xx = float.Parse(xRotation);
                 yy = float.Parse(yRotation);
+                zz = float.Parse(zRotation);
                 myArray.Add(float.Parse(strain_guage));
                 myArray.Add(float.Parse(xRotation));
                 myArray.Add(float.Parse(yRotation));
@@ -46,6 +50,11 @@ public class ESP : MonoBehaviour
                     Debug.Log("Data " + myArray.IndexOf(item) + ": " + item);
                 }
                 myArray.Clear();
+                // Clear the log to prevent it to consume all the RAM
+                // Assembly assembly = Assembly.GetAssembly(typeof(UnityEditor.Editor));
+                // Type logEntriesType = assembly.GetType("UnityEditor.LogEntries");
+                // MethodInfo clearMethod = logEntriesType.GetMethod("Clear");
+                // clearMethod.Invoke(null, null);
             }
             catch (System.TimeoutException)
             {
