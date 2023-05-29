@@ -30,4 +30,19 @@ public class ScoreCard : MonoBehaviour
         }
     }
 
+    public void Demofunc()
+    {
+        if (Score.cccc == true && Score.demo == true)
+        {
+            Score.hitcounter += 1;
+            txt.text = "Score=" + Score.hitcounter + "/" + MaxHitScore.GetMaxHitValue();
+            if (Score.hitcounter == MaxHitScore.GetMaxHitValue())
+            {
+                Score.hitcounter = 0;
+            }
+            Score.cccc = false;
+            Score.demo = false;
+        }
+    }
+
 }

@@ -1387,6 +1387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objRayCasting: {fileID: 963194230}
+  _ScoreCard: {fileID: 1958387334}
   crshr: {fileID: 1933983038}
 --- !u!114 &1958387336
 MonoBehaviour:
